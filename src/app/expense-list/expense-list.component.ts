@@ -1,6 +1,7 @@
 import { Component , OnInit } from '@angular/core';
 import { ExpensiveService } from '../expense-service';
 import { Expense } from '../expense-form/shared/expense-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-expense-list',
@@ -11,18 +12,20 @@ export class ExpenseListComponent  implements OnInit {
 
   expenses!: Expense[];
 
-  constructor(  private expenseService: ExpensiveService){}
+  constructor(private _router: Router){}
 
   ngOnInit() {
-    
-    this.expenses = this.expenseService.expenses;
+    debugger;
+    this.expenses = ExpensiveService.expenses;
   }
 
   deleteExpense(id: number){
-    this.expenseService.deleteExpense(id);
+    ExpensiveService.deleteExpense(id);
   }
 
 getExpenseById(id: number){
-  this.expenseService.getExpenseById(id);
+  debugger;
+  this._router.navigate(['/expense/' + id]);
+  ExpensiveService.getExpenseById(id);
 }
 }

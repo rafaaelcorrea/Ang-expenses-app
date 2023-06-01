@@ -16,10 +16,10 @@ export class AppComponent  implements OnInit{
   }
 
   ngOnInit(){
-   
-    this.expensiveStorageApp = this.expenseService.expenses;
+   debugger;
+    this.expensiveStorageApp = ExpensiveService.expenses;
   }
-  
+
   onNavigate( optionMenu: string){
     this.loadedOptionMenu = optionMenu;
   }

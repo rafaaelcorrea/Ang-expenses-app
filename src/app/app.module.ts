@@ -8,14 +8,8 @@ import {  ExpensiveService } from './expense-service';
 import { ExpenseListComponent } from './expense-list/expense-list.component';
 import { HeaderComponent } from './header/header.component';
 import { ExpenseDetailComponent } from './expense-list/expense-detail/expense-detail.component';
-import { RouterModule, Routes } from '@angular/router';
 
-const appRoutes: Routes = [
 
-  {path:'expenses' , component: ExpenseListComponent},
-  {path:'expenses/:id' , component: ExpenseDetailComponent},
- ];
- 
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +21,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    RouterModule.forRoot(appRoutes)
+    FormsModule
   ],
   providers: [ExpensiveService],
   bootstrap: [AppComponent]

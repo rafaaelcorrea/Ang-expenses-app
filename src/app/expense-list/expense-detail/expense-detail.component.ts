@@ -16,12 +16,18 @@ export class ExpenseDetailComponent implements OnInit {
 
   //@Input() id!: number;
   constructor(
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
     private expenseService: ExpensiveService){
   }
 
   ngOnInit() {
-   
+    debugger;
+    //get item id by url
+    this.route.paramMap.subscribe(params => {
+      const productId = params.get('id');
+      console.log(productId); // Faça o que desejar com o ID aqui
+    });
+
   }
 
 

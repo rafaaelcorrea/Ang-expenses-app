@@ -18,7 +18,7 @@ export class ExpenseFormComponent{
     constructor(private expenseService: ExpensiveService){ }
 
   pushExpensives(){
-    this.expenseService.addExpense( new Expense( this.id ,this.selectedExpenseType ,this.expenseValue , 
+    ExpensiveService.addExpense( new Expense( this.id ,this.selectedExpenseType ,this.expenseValue ,
       this.comments));
   }
 }

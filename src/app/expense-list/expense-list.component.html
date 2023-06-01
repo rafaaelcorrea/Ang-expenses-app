@@ -4,7 +4,7 @@
       <ul class="list-group">
         <li class="list-group-item"
           *ngFor="let expense  of expenses; let i = index">
-           <a [routerLink]="['/expenses', expense.id , expense.expenseType , expense.value, 
+           <a [routerLink]="['/expenses', expense.id , expense.expenseType , expense.value,
            expense.comments]">
              {{expense.expenseType}}
             <button class="btn btn-primary" (click)="getExpenseById(i)">View detail</button>
@@ -12,7 +12,5 @@
           </a>
         </li>
       </ul>
-      <app-expense-detail></app-expense-detail>
-      <router-outlet></router-outlet>
     </div>
 </div>

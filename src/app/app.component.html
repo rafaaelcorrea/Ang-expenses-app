@@ -12,6 +12,10 @@
 <body>
   <app-header (optionSelected)="onNavigate($event)"></app-header>
   <app-expense-form *ngIf="loadedOptionMenu === 'form_exp'"></app-expense-form>
-  <app-expense-list [id]="id" *ngIf="loadedOptionMenu === 'expenses'"></app-expense-list>
+
+  <router-outlet></router-outlet>
 </body>
 </html>
+
+
+
