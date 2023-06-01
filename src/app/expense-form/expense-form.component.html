@@ -1,0 +1,28 @@
+<br>
+<div class="container-form">
+    <form>
+        <div class="mb-3">
+            <select  class="form-select" aria-label="Default select example" 
+            [(ngModel)]="selectedExpenseType" name="selectedExpenseType">
+                <option selected >Choose your expensive type</option>
+                <option value="Health">Health</option>
+                <option value="Food">Food</option>
+                <option value="Investiment">Investiment</option>
+            </select>
+            <label for="exampleFormControlInput1" class="form-label">
+                Value
+            </label>
+            <input class="form-control" type="text" placeholder="e.g.: 50.49" aria-label="default input example"
+            [(ngModel)]="expenseValue" name="expenseValue">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
+            [(ngModel)]="comments" name="comments"></textarea>
+        </div>
+        <div class="buttons">
+            <button type="button" (click)="pushExpensives()" class="btn btn-primary">Send</button>
+            <button type="reset" class="btn btn-danger">Clear</button>
+        </div>
+    </form>
+</div>

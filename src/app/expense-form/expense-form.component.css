@@ -1,0 +1,9 @@
+.form-control , .form-select{
+    width: 38%;
+}
+.container-form{
+    padding: 0 25px;
+}
+.btn-danger{
+    margin-left: 12px;
+}
