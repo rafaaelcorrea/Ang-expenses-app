@@ -8,27 +8,24 @@ import { Subscription } from 'rxjs';
   templateUrl: './expense-detail.component.html',
   styleUrls: ['./expense-detail.component.css']
 })
-export class ExpenseDetailComponent implements OnInit {
+export class ExpenseDetailComponent {
 
-  expenses!: Expense | undefined;
-  expense!: {id:number, expenseType: string , value: number, comments: string}
-  paramsSubscription!: Subscription;
+  //expenses!: Expense | undefined;
+  //expense!: {id:number, expenseType: string , value: number, comments: string}
+  //expense:any;
+  //paramsSubscription!: Subscription;
 
-  //@Input() id!: number;
+  @Input() selectedExpenseId!: number;
+  selectedExpense!: any;
+
   constructor(
     private route: ActivatedRoute,
     private expenseService: ExpensiveService){
   }
 
-  ngOnInit() {
-    debugger;
-    //get item id by url
-    this.route.paramMap.subscribe(params => {
-      const productId = params.get('id');
-      console.log(productId); // Faça o que desejar com o ID aqui
-    });
-
+  ngOnChanges() {
+    if (this.selectedExpenseId) {
+      this.expenseService.getExpenseById(this.selectedExpenseId);
+    }
   }
-
-
 }

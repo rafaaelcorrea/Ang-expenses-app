@@ -7,17 +7,12 @@ import { Expense } from './expense-form/shared/expense-model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  implements OnInit{
+export class AppComponent {
   expensiveStorageApp!: Expense[];
   loadedOptionMenu: string = 'home';
   id!:number;
   constructor(  private expenseService: ExpensiveService){
 
-  }
-
-  ngOnInit(){
-   debugger;
-    this.expensiveStorageApp = ExpensiveService.expenses;
   }
 
   onNavigate( optionMenu: string){

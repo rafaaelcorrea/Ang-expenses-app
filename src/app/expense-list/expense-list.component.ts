@@ -11,21 +11,26 @@ import { Router } from '@angular/router';
 export class ExpenseListComponent  implements OnInit {
 
   expenses!: Expense[];
-
-  constructor(private _router: Router){}
+  selectedExpenseIdV2!:number;
+  constructor(private _router: Router ,  private expenseService: ExpensiveService){}
 
   ngOnInit() {
-    debugger;
-    this.expenses = ExpensiveService.expenses;
+
+    //this.expenses = ExpensiveService.expenses;
+    this.expenses = this.expenseService.getExpenses();
   }
 
   deleteExpense(id: number){
-    ExpensiveService.deleteExpense(id);
+    //ExpensiveService.deleteExpense(id);
+    this.expenseService.deleteExpense(id);
   }
 
-getExpenseById(id: number){
-  debugger;
-  this._router.navigate(['/expense/' + id]);
-  ExpensiveService.getExpenseById(id);
+ showDetails(id: number){
+  
+  //this._router.navigate(['/expense/' + id]);
+  //ExpensiveService.getExpenseById(id);
+    this.expenseService.getExpenseById(id);
+    this.selectedExpenseIdV2 = id;
+    console.log(this.selectedExpenseIdV2);
 }
 }
