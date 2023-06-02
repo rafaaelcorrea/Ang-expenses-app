@@ -8,10 +8,3 @@ i{
     cursor:pointer;
 }
 
-.btn-primary , .btn-danger {
-    float: right;
-}
-
-.btn-danger{
-    margin-left: 12px;
-}

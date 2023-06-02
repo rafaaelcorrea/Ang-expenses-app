@@ -14,11 +14,11 @@ export class ExpenseFormComponent{
     selectedExpenseType!: string;
     expenseValue!: number;
     comments!: string;
-    date!: Date;
+
     constructor(private expenseService: ExpensiveService){ }
 
-  pushExpensives(): any{
-      this.expenseService.addExpense( new Expense( this.id ,this.selectedExpenseType ,this.expenseValue ,
-      this.comments, this.date = new Date()));
+  pushExpensives(){
+    ExpensiveService.addExpense( new Expense( this.id ,this.selectedExpenseType ,this.expenseValue ,
+      this.comments));
   }
 }
