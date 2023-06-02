@@ -1,4 +1,4 @@
-import { Component , OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ExpensiveService } from '../expense-service';
 import { Expense } from '../expense-form/shared/expense-model';
 import { Router } from '@angular/router';
@@ -8,24 +8,21 @@ import { Router } from '@angular/router';
   templateUrl: './expense-list.component.html',
   styleUrls: ['./expense-list.component.css']
 })
-export class ExpenseListComponent  implements OnInit {
+export class ExpenseListComponent implements OnInit {
 
-  expenses!: Expense[];
+  public expenses: Expense[] = [];
 
-  constructor(private _router: Router){}
+  constructor(private expenseService: ExpensiveService, private _router: Router) { }
 
   ngOnInit() {
-    debugger;
-    this.expenses = ExpensiveService.expenses;
+    this.expenses = this.expenseService.getExpenses();
   }
 
-  deleteExpense(id: number){
-    ExpensiveService.deleteExpense(id);
+  deleteExpense(id: number) {
+    this.expenseService.deleteExpense(id);
   }
 
-getExpenseById(id: number){
-  debugger;
-  this._router.navigate(['/expense/' + id]);
-  ExpensiveService.getExpenseById(id);
-}
+  getExpenseById(id: number) {
+    this._router.navigate(['/expenses/' + id]);
+  }
 }

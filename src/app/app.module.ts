@@ -16,12 +16,13 @@ import { ExpenseDetailComponent } from './expense-list/expense-detail/expense-de
     ExpenseFormComponent,
     ExpenseListComponent,
     HeaderComponent,
-    ExpenseDetailComponent
+    ExpenseDetailComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [ExpensiveService],
   bootstrap: [AppComponent]

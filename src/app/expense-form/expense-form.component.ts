@@ -18,7 +18,10 @@ export class ExpenseFormComponent{
     constructor(private expenseService: ExpensiveService){ }
 
   pushExpensives(){
-    ExpensiveService.addExpense( new Expense( this.id ,this.selectedExpenseType ,this.expenseValue ,
+    this.expenseService.addExpense( new Expense( this.id ,this.selectedExpenseType ,this.expenseValue ,
       this.comments));
+
+
+      console.log("tamanho: " + this.expenseService.getExpenses().length)
   }
 }

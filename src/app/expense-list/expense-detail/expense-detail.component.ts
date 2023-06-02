@@ -21,11 +21,10 @@ export class ExpenseDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    debugger;
     //get item id by url
     this.route.paramMap.subscribe(params => {
       const productId = params.get('id');
-      console.log(productId); // Faça o que desejar com o ID aqui
+      this.expenses = this.expenseService.getExpenseById(Number(productId));
     });
 
   }

@@ -17,11 +17,7 @@ export class AppComponent  implements OnInit{
 
   ngOnInit(){
    debugger;
-    this.expensiveStorageApp = ExpensiveService.expenses;
-  }
-
-  onNavigate( optionMenu: string){
-    this.loadedOptionMenu = optionMenu;
+    this.expensiveStorageApp = this.expenseService.getExpenses();
   }
 
 }
