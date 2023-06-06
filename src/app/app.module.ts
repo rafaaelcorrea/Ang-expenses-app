@@ -8,8 +8,12 @@ import {  ExpensiveService } from './expense-service';
 import { ExpenseListComponent } from './expense-list/expense-list.component';
 import { HeaderComponent } from './header/header.component';
 import { ExpenseDetailComponent } from './expense-list/expense-detail/expense-detail.component';
-
-
+import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule }  from '@angular/material/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +21,18 @@ import { ExpenseDetailComponent } from './expense-list/expense-detail/expense-de
     ExpenseListComponent,
     HeaderComponent,
     ExpenseDetailComponent,
+    HomeComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [ExpensiveService],
   bootstrap: [AppComponent]

@@ -6,8 +6,11 @@
           *ngFor="let expense  of expenses; let i = index">
            <a>
              {{expense.expenseType}}
+            <i class="bi bi-card-text" title="View Details" (click)="getExpenseById(i)"></i>
+            <i class="bi bi-trash3"  title="Delete" (click)="deleteExpense(i)"></i>
+             <!--
             <button class="btn btn-primary" (click)="getExpenseById(i)">View detail</button>
-            <button class="btn btn-danger" (click)="deleteExpense(i)">Delete</button>
+            <button class="btn btn-danger" (click)="deleteExpense(i)">Delete</button> -->
           </a>
         </li>
       </ul>

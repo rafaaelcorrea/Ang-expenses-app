@@ -1,3 +1,10 @@
+.general-container{
+
+    background-color: blueviolet;
+    color: white;
+    height: 100%;
+}
+
 .form-control , .form-select{
     width: 38%;
 }
@@ -6,4 +13,23 @@
 }
 .btn-danger{
     margin-left: 12px;
+}
+
+.bi-x-lg{
+    cursor: pointer;
+    font-size:19px;
+    margin-left: 20px;
+}
+
+.alert{
+    margin-left: 25px;
+}
+
+.container-form{
+    margin-top: -5px;
+}
+
+.btn-primary , .btn-primary:hover , .btn-primary:focus , .btn-primary:disabled {
+    background-color: rgb(70, 15, 93);
+    border-color: rgb(70, 15, 93);
 }

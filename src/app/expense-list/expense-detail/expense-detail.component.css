@@ -1,0 +1,18 @@
+.card{
+    width:25%;
+    height: 250px;
+    margin-left: 25px;
+    color: white;
+    background-color: rgb(70, 15, 93);
+    border-color: white;
+    border-radius: 5px;
+}
+
+span , p {
+    padding: 0 15px;
+}
+
+.general-container{
+    background-color: blueviolet;
+    height: 100%;
+}

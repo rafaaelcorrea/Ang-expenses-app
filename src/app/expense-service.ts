@@ -28,11 +28,7 @@ export class ExpensiveService {
      addExpense( data: Expense){
         this.expenses.push(data);
          console.log(this.expenses);
-         
-         for ( let i = data.id ; i < this.expenses.length; i++) {
-            data.id = i;
-         }
-
+         this.expenses.forEach((element , index) => {data.id = index});
     }
     //remove uma despesa da lista com base em seu ID:
 
@@ -46,4 +42,4 @@ export class ExpensiveService {
 
     }*/
 
-}
+}11

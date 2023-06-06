@@ -9,12 +9,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./expense-detail.component.css']
 })
 export class ExpenseDetailComponent implements OnInit {
-
   expenses!: Expense | undefined;
-  expense!: {id:number, expenseType: string , value: number, comments: string}
-  paramsSubscription!: Subscription;
-
-  //@Input() id!: number;
+  
   constructor(
     private route: ActivatedRoute,
     private expenseService: ExpensiveService){

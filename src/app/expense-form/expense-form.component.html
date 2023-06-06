@@ -1,28 +1,54 @@
-<br>
-<div class="container-form">
-    <form>
-        <div class="mb-3">
-            <select  class="form-select" aria-label="Default select example" 
-            [(ngModel)]="selectedExpenseType" name="selectedExpenseType">
-                <option selected >Choose your expensive type</option>
-                <option value="Health">Health</option>
-                <option value="Food">Food</option>
-                <option value="Investiment">Investiment</option>
-            </select>
-            <label for="exampleFormControlInput1" class="form-label">
-                Value
-            </label>
-            <input class="form-control" type="text" placeholder="e.g.: 50.49" aria-label="default input example"
-            [(ngModel)]="expenseValue" name="expenseValue">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
-            [(ngModel)]="comments" name="comments"></textarea>
-        </div>
-        <div class="buttons">
-            <button type="button" (click)="pushExpensives()" class="btn btn-primary">Send</button>
-            <button type="reset" class="btn btn-danger">Clear</button>
-        </div>
-    </form>
+<div class="general-container">
+    <br>
+    <span class="alert alert-danger" *ngIf="activeMessageError === true">Oops! Please, put a valid expense value.
+        <i class="bi bi-x-lg" (click)="closeMessageError()"></i></span>
+    <br>
+    <br>
+    <div class="container-form">
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Choose the type expense</label>
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedExpenseType"
+                    name="selectedExpenseType">
+                    <option value="Health">Health</option>
+                    <option value="Food">Food</option>
+                    <option value="Investiment">Investiment</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Pet">Pet</option>
+                    <option value="Extra Expense">Extra Expense...</option>
+                </select>
+                <br>
+                <div class="mb-3">
+                    <label class="form-label">Date expense</label>
+                    <input class="form-control" [(ngModel)]="expenseDate" [min]="currentDate" name="expenseDate"
+                        type="date" id="date" />
+                    <!--  Datepicker Ang. Material
+                <mat-form-field>
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                -->
+                </div>
+                <label class="form-label" for="exampleFormControlInput1">
+                    Value
+                </label>
+                <input class="form-control" type="number" placeholder="e.g.: 50.49" aria-label="default input example"
+                    [(ngModel)]="expenseValue" name="expenseValue">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="exampleFormControlTextarea1">Comments</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" [(ngModel)]="comments"
+                    name="comments"></textarea>
+            </div>
+            <div class="buttons">
+                <button class="btn btn-primary" [disabled]="!!!selectedExpenseType || !!!expenseDate || !!!expenseValue"
+                    type="button" (click)="pushExpensives()">Send</button>
+                <button class="btn btn-danger" type="reset">Clear</button>
+            </div>
+        </form>
+    </div>
 </div>

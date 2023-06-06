@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ExpensiveService } from '../expense-service';
 import { Expense } from '../expense-form/shared/expense-model';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class ExpenseListComponent implements OnInit {
 
   public expenses: Expense[] = [];
-
+   @Input() iIndex!: number;
   constructor(private expenseService: ExpensiveService, private _router: Router) { }
 
   ngOnInit() {
