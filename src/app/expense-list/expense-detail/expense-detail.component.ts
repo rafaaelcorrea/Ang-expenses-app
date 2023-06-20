@@ -16,11 +16,12 @@ export class ExpenseDetailComponent implements OnInit {
     private expenseService: ExpensiveService){
   }
 
-  ngOnInit() {
+  ngOnInit(): any {
     //get item id by url
     this.route.paramMap.subscribe(params => {
       const productId = params.get('id');
       this.expenses = this.expenseService.getExpenseById(Number(productId));
+      this.expenseService.loadDataLocStorage();
     });
 
   }

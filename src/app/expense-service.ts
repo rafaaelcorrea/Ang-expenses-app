@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { Expense } from "./expense-form/shared/expense-model";
 
 
@@ -6,9 +6,10 @@ import { Expense } from "./expense-form/shared/expense-model";
 @Injectable({
   providedIn: 'root'
 })
-export class ExpensiveService {
+export class ExpensiveService implements OnInit{
 
-    public  expenses: Expense[] =[] ;
+    
+  public  expenses: Expense[] =[] ;
 
     constructor(){
       console.log("Iniciou");
@@ -29,17 +30,30 @@ export class ExpensiveService {
         this.expenses.push(data);
          console.log(this.expenses);
          this.expenses.forEach((element , index) => {data.id = index});
+         this.saveDataLocStorage();
     }
     //remove uma despesa da lista com base em seu ID:
 
      deleteExpense(id: number){
-        this.expenses.splice(id);
+        this.expenses.splice(id ,1);
+        this.loadDataLocStorage();
+      }
+
+     loadDataLocStorage() {
+      const storedData = localStorage.getItem('expanses');
+      if (storedData) this.expenses = JSON.parse(storedData); 
+     }
+
+     saveDataLocStorage() {
+      localStorage.setItem('expanses', JSON.stringify(this.expenses));
+     }
+
+     setDataLocStorage( data: Expense[] =[]){
+      this.expenses = data;
+     }
+
+    ngOnInit(): void {
+      this.loadDataLocStorage();
     }
 
-    //atualiza uma despesa existente com base em seu ID:
-    /*
-    updateExpense(expense: Expense){
-
-    }*/
-
-}11
+}

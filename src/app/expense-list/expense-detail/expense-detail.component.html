@@ -1,11 +1,13 @@
 <div class="general-container">
   <br>
-  <div class="card">
-    <span class="h3">Expense Detail</span>
-    <!--<p>id: {{expenses?.id}}</p>-->
-    <p>Name: {{expenses?.expenseType}}</p>
-    <p>Expense Date:{{expenses?.expenseDate}} </p>
-    <p>Registered in:{{expenses?.registeredHour}} </p>
-    <p>Description: {{ expenses?.comments}}</p>
+  <div class="card"> 
+    <span class="h3">Expanse Detail</span>
+    <hr>
+    <!--<label>id: {{expenses?.id}}</label>-->
+    <label class="form-label">name:<p>{{expenses?.expenseType}}</p></label>
+    <label class="form-label">Expanse Date:<p>{{expenses?.expenseDate | date:'short'}}</p> </label>
+    <label class="form-label">Registered in:<p>{{expenses?.registeredHour | date:'short'}}</p> </label>
+    <label class="form-label">value:<p>{{expenses?.value}}</p></label>
+    <label class="form-label">Description:<p> {{expenses?.comments}}</p></label>
   </div>
 </div>

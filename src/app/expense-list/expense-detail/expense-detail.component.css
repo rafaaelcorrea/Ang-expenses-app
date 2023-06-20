@@ -1,11 +1,12 @@
 .card{
     width:25%;
-    height: 250px;
+    height: 400px;
     margin-left: 25px;
     color: white;
     background-color: rgb(70, 15, 93);
     border-color: white;
     border-radius: 5px;
+    padding: 0 15px;;
 }
 
 span , p {
@@ -15,4 +16,12 @@ span , p {
 .general-container{
     background-color: blueviolet;
     height: 100%;
+}
+
+span{
+    text-align: center;
+}
+
+p{
+ padding: 0 2px;
 }
